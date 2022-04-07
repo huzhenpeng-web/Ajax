@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 查看分支列表 git branch -->
+    <!-- 创建新分支 git branch 分支名称 注意:执行完创建分支的命令之后， 用户当前所处的还是master分支 -->
+    <!-- git切换分支
+          git checkout 分支名称
+    -->
+    <!-- 分支的快速创建和切换
+        -b 表示创建一个新分支
+        #checkout 表示切换到刚才新建的分支上
+        git checkout -b 分支名称
+    
+    -->
+    <!-- 合并分支
+        1.切换到master分支
+        2.在master分支上运行git merge命令 将login的分支合并到master分支上
+    -->
+
+    <!-- 删除分支
+        git branch -d 分支名称
+    -->
+
+    <!-- 在不同分支上修改了同一个文件
+        git checkout main
+        git merge 要合并的分支
+        打开冲突的文件 手动解决冲突
+        git add .
+        git commit -m "解决了分支合并冲突的问题"
+    -->
+
+    <!-- 将本地分支推送到远程仓库中
+        git push -u 远程仓库的别名 本地分支名称：远程分支名称
+        git push -u origin payment:pay
+        简化
+        git push -u origin payment
+    -->
+
+    <!-- 查看远程仓库中所有的分支列表
+        git remote show 远程仓库名称
+        git remote show origin
+    -->
+
+    <!-- 跟踪分支
+        从远程仓库中 把对应的远程分支下载到本地仓库中 保持本地仓库分支和远程分支一致
+        git checkout 远程分支名称
+        
+        从远程仓库中 把对应的远程分支下载到本地仓库 并把下载的本地分支进行重命名
+        git checkout -b 本地分支名称 远程仓库名称/远程分支名称
+        git checkout -b payment origin/pay
+    -->
+
+    <!-- 拉取远程分支的最新代码
+        从远程仓库 拉取当前分支最新的代码 保持当前分支的代码和远程分支代码一致
+        git pull
+    -->
+
+    <!-- 删除远程分支
+        git push 远程仓库名称 --delete 远程分支名称
+    -->
+</body>
+
+</html>

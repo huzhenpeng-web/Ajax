@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器</title>
+    <script src="js/template-web.js"></script>
+    <script src="../js/jQuery3.6.0.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script type="text/html" id="test">
+        <h3>{{regTime | dateFormat }}</h3>
+    </script>
+    <script>
+        //创建一个过滤器
+        template.defaults.imports.dateFormat = function(date) {
+            //console.log(date);
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            return year + '-' + month + '-' + day;
+        };
+
+        var data = {
+            name: 'hzp',
+            age: 20,
+            content: '<h3>666</h3>',
+            flag: 2,
+            hobby: ['吃饭', '睡觉', '打豆豆'],
+            regTime: new Date()
+        }
+        var htmlS = template('test', data)
+        $('#container').html(htmlS);
+    </script>
+</body>
+
+</html>

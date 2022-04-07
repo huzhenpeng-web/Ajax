@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/jQuery3.6.0.js"></script>
+	</head>
+	<body>
+		<button id="btn">发起不带参数的请求</button>
+		<script>
+			$(function(){
+				$('#btn').on('click',function(){
+					$.get('http://www.liulongbin.top:3006/api/getbooks',function(res){
+						console.log(res)
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

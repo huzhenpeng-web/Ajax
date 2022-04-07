@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- JSON语法注意事项
+        1.属性名必须使用双引号包裹
+        2.字符串类型的值必须使用双引号包裹
+        3.JSON中不允许使用单引号表示字符串
+        4.JSON中不能写注释
+        5.JSON的最外层必须是对象或数组格式
+        6.不能使用undefined或函数作为JSON的值
+        作用:在计算机与网络之间存储和传输数据。
+        JSON的本质:用字符串表示Javascript对象数据或数组数据
+  -->
+    <script>
+        //json字符串和json对象的互换
+        var jsonStr = '{"name":"胡振鹏","age":"20"}'
+        console.log(jsonStr);
+        var result = JSON.parse(jsonStr)
+        console.log(result);
+        //json对象转换为json字符串
+        var json = JSON.stringify(result)
+        console.log(json);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 把数据对象转化为字符串的过程 叫做序列化 调用JSON.stringify()操作 叫做JSON序列化 -->
+<!-- 把字符串转化为数据对象的过程 叫做反序列化 调用JSON.parse()操作 叫做JSON反序列化 -->
+
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http:www.liulongbin.top:3006/api/getbooks')
+        xhr.send()
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status) {
+                console.log(xhr.responseText);
+                var jsonObj = JSON.parse(xhr.responseText)
+                console.log(jsonObj); //转化为Json对象
+            }
+        }
+    </script>
+</body>
+
+</html>

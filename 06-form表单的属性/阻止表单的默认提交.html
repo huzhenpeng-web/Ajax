@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<form action="/login" id="form1">
+			<input type="text" name="userName" id="" value="" />
+			<input type="password" name="pwd" id="" value="" />
+			<button type="submit">提交</button>
+		</form>
+		<script>
+			$(function(){
+				//第一种方式
+				// $('#form1').submit(function(){
+				// 	alert('666');
+				// })
+				//第二种方式
+				$('#form1').on('submit',function(e){
+					alert('666');
+					e.preventDefault();//阻止表单的默认提交行为
+				})
+			})
+		</script>
+	</body>
+</html>

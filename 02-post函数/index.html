@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jQuery3.6.0.js"></script>
+	</head>
+	<body>
+		<button type="button" id="btn">发起post请求</button>
+		<script>
+			$(function() {
+				$('#btn').on('click', function() {
+					$.post('http://www.liulongbin.top:3006/api/addbook', {
+						bookname: '水浒传',
+						author: 'hzp',
+						publisher: '天津图书出版社'
+					}, function(res) {
+						console.log(res);
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

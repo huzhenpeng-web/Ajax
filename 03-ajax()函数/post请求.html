@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/jQuery3.6.0.js"></script>
+	</head>
+	<body>
+		<button type="button" id="btn">发起post请求</button>
+		<script>
+			$(function() {
+				$('#btn').on('click', function() {
+					$.ajax({
+						type: 'post',
+						url: 'http://www.liulongbin.top:3006/api/addbook',
+						data: {
+							bookname: '云边有个小卖铺',
+							author: 'hzp',
+							publisher: '上海图书出版社'
+						},
+						success: function(res) {
+							console.log(res);
+						}
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

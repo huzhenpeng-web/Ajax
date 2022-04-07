@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/click.js"></script>
+</head>
+
+<body>
+    <!-- 1.文件选择框 -->
+    <input type="file" id="files">
+    <!-- 2.上传文件的按钮 -->
+    <button id="btn">上传文件</button><br />
+    <!-- 3.img标签 来显示上传成功以后的图片 -->
+    <img src="" alt="这是一张图片" id="img" width="800px">
+    <!-- <script>
+        //获取上传文件的按钮
+        var btns = document.getElementById('btn')
+            //为按钮绑定监听事件
+        btns.addEventListener('click', function(e) {
+            e.preventDefault()
+            var files = document.getElementById('files').files
+            if (files.length <= 0) {
+                return alert("您未选择任何文件!")
+            }
+        })
+    </script> -->
+</body>
+
+</html>

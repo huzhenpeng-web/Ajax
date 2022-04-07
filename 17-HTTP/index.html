@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+      Request Headers
+        1.请求行 由请求方式、URL和HTTP协议版本三个部分组成
+        POST /api/post HTTP/1.1
+        2.请求头部 
+        3.空行
+        4.请求体
+    -->
+    <!-- 
+      Response Headers
+      1.状态行 由 HTTP协议版本、状态码和状态码的描述文本
+      HTTP/1.1 200 ok
+      2.响应头部
+      3.空行
+      4.响应体 是服务器响应给客户端的资源内容
+     -->
+
+    <!-- HTTP的常用请求方法
+        1.get(查询)
+        2.post(新增)
+        3.put(修改)
+        4.delete(删除)
+     -->
+
+
+    <!-- 
+      HTTP状态码由三个十进制数字组成 第一个十进制数字定义了状态码的类型 后两个数字用来对状态码进行细分
+      1**.信息
+      2**.成功
+        200 ok 请求成功 一般用于get或post请求
+        201 created 已创建 常用语post或put请求
+      3**.重定向
+        301 Moved Permanently 永久移动
+        302 Found 临时移动
+        304 Not Modified 未修改
+      4**.客户端错误
+        400 Bad Request 
+        401 Unauthorized 当前请求需要用户验证
+        403 ForBidden 服务器已经理解请求 但是拒绝执行它
+        404 Not Found 服务器无法根据客户端的请求找到资源
+        408 Request Timeout 请求超时
+      5**.服务器错误
+        500 Internal Server Error 服务器内部错误 无法完成请求
+        501 Not Implemented 服务器不支持该请求方法
+        503 Service Unavailable 由于超载或系统维护 服务器暂时无法处理客户端请求
+      -->
+</body>
+
+</html>

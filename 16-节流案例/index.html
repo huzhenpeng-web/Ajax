@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠标跟随效果</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        #angel {
+            position: absolute;
+        }
+    </style>
+    <script src="../js/jQuery3.6.0.js"></script>
+</head>
+
+<body>
+    <img src="images/angel.gif" alt="小天使" id="angel">
+    <script>
+        $(function() {
+            //1.获取图片
+            var angel = $('#angel')
+                //定义节流阀
+            var timer = null
+                //2.绑定mousemove事件
+            $(document).on('mousemove', function(e) {
+                //判断节流阀是否为空
+                if (timer != null) {
+                    return
+                }
+                timer = setTimeout(function name() {
+                    //设置图片的位置
+                    $(angel).css('left', e.pageX + 'px').css('top', e.pageY + 'px')
+                    timer = null
+                }, 16)
+
+            })
+        })
+    </script>
+    <!-- 防抖和节流的区别
+            防抖是保证只有最后一次被触发
+            节流是减少事件触发的频率 -->
+</body>
+
+</html>

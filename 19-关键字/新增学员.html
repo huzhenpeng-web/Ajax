@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="add">新增学员</button>
+    <button id="display">显示学员信息</button>
+    <p id="p1" style="display: none;">共0名学员,信息如下:</p>
+    <script>
+        var add = document.getElementById('add')
+        var display = document.getElementById('display')
+        var p1 = document.getElementById('p1')
+        var arr = []
+        add.onclick = () => { //添加学员
+            var student = window.prompt('请输入新增学员姓名:')
+            arr.push(student) //往数组里添加
+            p1.innerHTML = '共' + arr.length + '名学员,信息如下:' + '<br/>' + arr
+        }
+        display.onclick = () => { //显示学员
+            p1.style = 'display:block;'
+        }
+    </script>
+</body>
+
+</html>

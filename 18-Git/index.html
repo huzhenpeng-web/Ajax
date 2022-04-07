@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- git三个区域 工作区、暂存区、Git仓库-->
+    <!-- 查看所有的全局配置项 git config --list --global -->
+    <!-- 查看指定的全局配置项 git config user.name git config user.email -->
+    <!-- 
+      想打开git config 命令的帮助手册   git help config
+
+      想要获取git config 命令的快速参考  git config -h
+     -->
+
+    <!-- 现有目录初始化仓库
+      1.项目根目录 右键打开git bash
+      2.git init命令
+    -->
+    <!-- 工作区的四种状态 分为两大类
+      未被git管理
+        未跟踪(Untracked)
+      已被git管理
+        未修改(Unmodified)
+        已修改(Modified)
+        已暂存(Staged)
+    -->
+
+    <!-- 显示文件状态
+      git status
+      简写
+      git status -s 或git status --short
+    -->
+
+    <!-- 跟踪新文件
+      git add index.html 到暂存区
+    -->
+
+    <!-- 提交新文件 到git仓库
+      git commit -m "新建了login.html"
+    -->
+
+    <!-- 修改过的、没有放入暂存区的文件前面有红色的M标记 
+        绿色的M表示文件已修改且已放入暂存区      
+    -->
+
+    <!-- git add
+      1.可以用它开始跟踪新文件
+      2.把已跟踪、且已修改的文件到暂存区
+      3.把有冲突的文件标记为已解决状态
+    -->
+
+    <!-- 撤销对文件的修改 
+    git checkout --index.html
+    本质:用git仓库中保存的文件 覆盖工作区中指定的文件
+    -->
+
+    <!-- 向暂存区中一次性添加多个文件 git add . -->
+
+    <!-- 取消暂存的文件  git reset HEAD 要移除的文件名称
+          移除多个文件 git reset HEAD .
+    -->
+
+    <!-- 跳过暂存区 git commit -a -m
+    工作区-暂存区-git仓库
+    工作区-git仓库 
+    -->
+
+    <!-- 移除文件 
+        从git仓库和工作区同时移出index.js文件
+        git rm -f index.js
+        只从git仓库中移出index.css 但保留工作区中的index.css
+        git rm --cached index.css
+    
+    -->
+
+    <!-- 忽略文件 创建一个名为.gitinore的配置文件
+      1.以#开头的是注释
+      2.以/结尾的是目录
+      3.以/开头防止递归
+      4.以!开头表示取反
+      5.可以使用glob模式进行文件和文件夹的匹配(glob指简化了的正则表达式)
+    【glob模式】
+      {
+        1.星号*匹配零个或多个任意字符
+        2.[abc]匹配任何一个列在方括号中的字符
+        3.问号?只匹配一个任意字符
+        4.在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配([0-9])
+        5.两个星号**表示匹配任意中间目录(比如a/**/z可以匹配a/z、a/b/z或a/b/c/z)
+      }
+      
+    -->
+
+
+    <!-- 查看提交历史
+      git log 最近的提交
+      git log -2 只展示最新的两条提交历史
+      git log -2 --pretty=oneline 在一行上展示最近两条提交历史的信息
+      在一行上展示最近两条提交历史的信息 并自定义输出格式
+      %h提交的简写哈希值 %an作者名字 %ar作者修订日期 %s 提交说明
+      git log -2 --pretty=format:"%h | %an | %ar | %s"
+    -->
+
+    <!-- 回退到指定的历史版本
+      使用git reset --hard 根据指定的提交ID回退到指定版本
+      git reset --hard <CommitID>
+      在旧版本中使用命令 查看命令操作的历史
+      git reflog --pretty=oneline
+      再次根据最新的提交ID 跳转到最新的版本
+      git reset --hard <CommitID>
+    -->
+
+    <!-- 小结 -->
+    <!-- 初始化Git仓库的命令 git init -->
+    <!-- 查看文件状态的命令 git status或git status -s 或git status --short -->
+    <!-- 一次性将文件加入暂存区的命令 git add . -->
+    <!-- 将暂存区的文件提交到Git仓库的命令 git commit -m "提交消息" -->
+
+
+    <!-- Github远程仓库的使用
+      1.打开Git Bash
+      2.ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+      3.连续敲击三次回车 c:\Users\用户名文件夹\.ssh 目录中生成id_rsa和id_rsa.pub两个文件
+
+      检测ssh key是否配置成功
+      ssh -T git@github.com
+    -->
+</body>
+
+</html>
